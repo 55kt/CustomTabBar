@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTab: Tab = .home
+    
+    enum Tab {
+        case home, search, favorites, profile
+    }
+    
     var body: some View {
-        VStack {
-            Text("Custom tab bar first commit")
+        ZStack(alignment: .bottom) {
+            TabContent()
         }
-        .padding()
     }
 }
 
