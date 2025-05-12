@@ -16,8 +16,11 @@ struct ContentView: View {
     
     var body: some View {
         ZStack(alignment: .bottom) {
-            TabContent()
+            TabContent(selectedTab: $selectedTab)
+            CustomTabBar(selectedTab: $selectedTab)
         }
+        .ignoresSafeArea(edges: .bottom)
+        .preferredColorScheme(.dark)
     }
 }
 
